@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fa0.awsstatic.com%2Fmain%2Fimages%2Flogos%2Faws_logo_smile_1200x630.png&imgrefurl=https%3A%2F%2Faws.amazon.com%2Fabout-aws%2Fwhats-new%2F2019%2F&docid=CTLsfN4pid-zuM&tbnid=C0-Qy9ehSkUHYM%3A&vet=10ahUKEwj1nofKk7bnAhXHG80KHdsQAKsQMwixASgqMCo..i&w=1200&h=630&itg=1&bih=937&biw=1920&q=AWS%20secrets%20manager%20logo%20image%20link&ved=0ahUKEwj1nofKk7bnAhXHG80KHdsQAKsQMwixASgqMCo&iact=mrc&uact=8" width="320" alt="Kinesis Logo" />
+  <img src="https://cdn-images-1.medium.com/max/1600/0*UQBKjEff1uIsXH8W" width="320" alt="Kinesis Logo" />
 </p>
 
 ## Description
@@ -27,7 +27,7 @@ import { Module } from '@nestjs/common';
 export class AppModule {}
 ```
 
-### Use the Publisher
+### Use the Secrets Manager
 
 ```typescript
 import { hash } from 'crypto';

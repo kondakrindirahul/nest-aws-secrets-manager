@@ -1,2 +1,2 @@
-export * from './secrets-manager';
+export * from './secrets-retriever.service';
 export * from './aws-secrets-manager.module';

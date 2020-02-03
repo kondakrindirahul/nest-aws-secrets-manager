@@ -1,15 +1,23 @@
 import { DynamicModule, Global, Module } from '@nestjs/common';
 
-import { SecretsManager } from './secrets-manager';
+import { AWS_SECRETS_MANAGER_TOKEN } from './tokens';
+import { SecretsManager } from 'aws-sdk';
+import { SecretsRetrieverService } from './secrets-retriever.service';
 
 @Global()
 @Module({})
 export class AWSSecretsManagerModule {
-  static forRoot(): DynamicModule {
+  static forRoot(secretsManager: SecretsManager): DynamicModule {
     return {
       module: AWSSecretsManagerModule,
-      providers: [SecretsManager],
-      exports: [],
+      providers: [
+        SecretsRetrieverService,
+        {
+          provide: AWS_SECRETS_MANAGER_TOKEN,
+          useValue: secretsManager,
+        },
+      ],
+      exports: [SecretsRetrieverService],
     };
   }
 }

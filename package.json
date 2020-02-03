@@ -1,6 +1,5 @@
 {
   "name": "nest-aws-secrets-manager",
-  "version": "1.0.2",
   "description": "Efficient AWS Secrets Manager",
   "author": "Rahul Kondakrindi",
   "license": "MIT",
