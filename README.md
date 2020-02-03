@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://cdn-images-1.medium.com/max/1600/0*UQBKjEff1uIsXH8W" width="320" alt="Kinesis Logo" />
+  <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fimg.stackshare.io%2Fservice%2F8789%2Faws-secret-manager.png&imgrefurl=https%3A%2F%2Fstackshare.io%2Fstackups%2Faws-secrets-manager-vs-vault&docid=Nk0V3oUqY8XEfM&tbnid=mtw7NHWuEy_GaM%3A&vet=10ahUKEwj1nofKk7bnAhXHG80KHdsQAKsQMwhPKAAwAA..i&w=200&h=200&bih=937&biw=1920&q=AWS%20secrets%20manager%20logo%20image%20link&ved=0ahUKEwj1nofKk7bnAhXHG80KHdsQAKsQMwhPKAAwAA&iact=mrc&uact=8" width="320" alt="Kinesis Logo" />
 </p>
 
 ## Description
@@ -56,4 +56,4 @@ Pull requests are welcome. Please remember that commits must be made using Angul
 
 ## License
 
-Nest-Kinesis-Producer is [MIT licensed](LICENSE).
+Nest-AWS-Secrets_manager is [MIT licensed](LICENSE).
