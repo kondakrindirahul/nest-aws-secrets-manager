@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://cdn-images-1.medium.com/max/1600/0*UQBKjEff1uIsXH8W" width="320" alt="Kinesis Logo" />
+  <img src="https://miro.medium.com/max/2880/1*z2lLrLCCnlTsC2XsMFnvQw.png" width="320" alt="Secrets Manager Logo" />
 </p>
 
 ## Description
