@@ -14,14 +14,16 @@ $ npm install nest-aws-secrets-manager
 
 ## Adding the Global Module
 
-Add the Kinesis Producer to your App Module imports. It will register globally.
+Add the AwsSecretsManagerModule to your App Module imports. It will register globally.
 
 ```typescript
+import { AWSSecretsManagerModule } from 'nest-aws-secrets-manager';
 import { AppService } from './app.service';
 import { Module } from '@nestjs/common';
+import { SecretsManager } from 'aws-sdk';
 
 @Module({
-  imports: [AWSSecretsManagerModule.forRoot()],
+  imports: [AWSSecretsManagerModule.forRoot(new SecretsManager())],
   providers: [AppService],
 })
 export class AppModule {}
@@ -30,18 +32,13 @@ export class AppModule {}
 ### Use the Secrets Manager
 
 ```typescript
-import { hash } from 'crypto';
+import { SecretsRetrieverService } from 'nest-aws-secrets-manager';
+
 export class AppService {
-  constructor(private readonly secretsManager: AWSSecretsManagerModule) {}
+  constructor(private readonly secretsRetrieverService: SecretsRetrieverService) {}
 
-  public async getCredentials(
-    secretName: string,
-    region: string,
-    profile: string,
-  ): Promise<void> {
-    const secretsManager = new AWSSecretsManager(secretName, region, profile);
-
-    const credentials = (await secretsManager.getCredentials()).valueOf();
+  private async getCredentials: Credentials {
+    return await this.secretsRetrieverService.getSecret<Credentials>('app-credentials');
   }
 }
 ```
