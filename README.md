@@ -9,7 +9,7 @@ An effficient <a href="https://docs.nestjs.com/" target="blank">Nest.js</a> Kine
 ## Installation
 
 ```bash
-$ npm install nest-kinesis-producer
+$ npm install nest-aws-secrets-manager
 ```
 
 ## Adding the Global Module

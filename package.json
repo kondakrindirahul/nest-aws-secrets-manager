@@ -1,16 +1,15 @@
 {
-  "name": "nest-kinesis-producer",
+  "name": "nest-aws-secrets-manager",
   "version": "1.0.2",
-  "description": "Efficient Node Kinesis Producer Based on Kevin Deng's AWS Big Data Blog",
-  "author": "Benjamin Main",
+  "description": "Efficient AWS Secrets Manager",
+  "author": "Rahul Kondakrindi",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "keywords": [
     "nest",
-    "kinesis",
-    "publish",
-    "producer"
+    "secrets-manager",
+    "aws",
   ],
   "homepage": "https://github.com/benMain/nest-kinesis-producer",
   "bugs": {
