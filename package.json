@@ -9,18 +9,18 @@
   "keywords": [
     "nest",
     "secrets-manager",
-    "aws",
+    "aws"
   ],
-  "homepage": "https://github.com/benMain/nest-kinesis-producer",
+  "homepage": "https://github.com/kondakrindirahul/nest-aws-secrets-manager",
   "bugs": {
-    "url": "https://github.com/benMain/nest-kinesis-producer/issues"
+    "url": "https://github.com/kondakrindirahul/nest-aws-secrets-manager/issues"
   },
   "files": [
     "dist"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/benMain/nest-kinesis-producer.git"
+    "url": "https://github.com/kondakrindirahul/nest-aws-secrets-manager.git"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",

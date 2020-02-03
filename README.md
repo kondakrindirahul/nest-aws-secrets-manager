@@ -4,7 +4,7 @@
 
 ## Description
 
-An effficient <a href="https://docs.nestjs.com/" target="blank">Nest.js</a> Kinesis Producer based on Kevin Deng's <a href="https://aws.amazon.com/blogs/big-data/implementing-efficient-and-reliable-producers-with-the-amazon-kinesis-producer-library/">blog piece</a>
+An effficient <a href="https://docs.nestjs.com/" target="blank">Nest.js</a> AWS Secrets Manager
 
 ## Installation
 
@@ -17,11 +17,11 @@ $ npm install nest-aws-secrets-manager
 Add the Kinesis Producer to your App Module imports. It will register globally.
 
 ```typescript
-import { Module } from '@nestjs/common';
 import { AppService } from './app.service';
+import { Module } from '@nestjs/common';
 
 @Module({
-  imports: [KinesisProducerModule.forRoot(new Kinesis())],
+  imports: [AWSSecretsManagerModule.forRoot()],
   providers: [AppService],
 })
 export class AppModule {}
@@ -32,18 +32,18 @@ export class AppModule {}
 ```typescript
 import { hash } from 'crypto';
 export class AppService {
-  constructor(private readonly kinesisPublisher: RetryingBatchKinesisPublisher){}
+  constructor(private readonly secretsManager: AWSSecretsManagerModule) {}
 
-  public async sendToKinesis(messages: string[]): Promise<void> {
-    const events = messages.map(x => new KinesisEvent(this.getPartitionKey(x), x));
-    await this.kinesisPublisher.putRecords('fakeStreamName', events);
-  }
+  public async getCredentials(
+    secretName: string,
+    region: string,
+    profile: string,
+  ): Promise<void> {
+    const secretsManager = new AWSSecretsManager(secretName, region, profile);
 
-  public getPartitionKey(mesage: string): string {
-    ...
+    const credentials = (await secretsManager.getCredentials()).valueOf();
   }
 }
-
 ```
 
 ## Support
@@ -52,8 +52,7 @@ Pull requests are welcome. Please remember that commits must be made using Angul
 
 ## Stay in touch
 
-- Author - [Benjamin Main](mailto::bam036036@gmail.com)
-- Twitter - [@Ben05920582](https://twitter.com/https://twitter.com/Ben05920582)
+- Author - [Rahul Kondakrindi](mailto::rahul.kondakrindi@gmail.com)
 
 ## License
 
