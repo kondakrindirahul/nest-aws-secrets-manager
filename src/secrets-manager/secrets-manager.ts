@@ -1,4 +1,5 @@
 import { Injectable, Logger } from '@nestjs/common';
+
 import { AWS } from 'aws-sdk';
 
 @Injectable()
@@ -10,11 +11,7 @@ export class SecretsManager {
   credentials: AWS.SharedIniFileCredentials;
   client: any;
 
-  constructor(
-    secretName: string,
-    region: string,
-    profile: string,
-  ) {
+  constructor(secretName: string, region: string, profile: string) {
     this.baseLogger = new Logger(SecretsManager.name);
     this.secretName = secretName;
     this.region = region;
@@ -29,8 +26,7 @@ export class SecretsManager {
 
   getCredentials() {
     return new Promise<string>((resolve, reject) => {
-
-      this.client.getSecretValue({SecretId: this.secretName}, (err, data) => {
+      this.client.getSecretValue({ SecretId: this.secretName }, (err, data) => {
         if (err) {
           reject(err);
           return;

@@ -8,9 +8,7 @@ export class AWSSecretsManagerModule {
   static forRoot(): DynamicModule {
     return {
       module: AWSSecretsManagerModule,
-      providers: [
-        SecretsManager,
-      ],
+      providers: [SecretsManager],
       exports: [],
     };
   }
